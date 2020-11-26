@@ -13,7 +13,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Classe représentant un client
+ * Classe représentant un client de l'application
  * @author Binome 1-8
  *	
  */
@@ -24,9 +24,7 @@ public class Client {
     InetAddress groupAddr;
     String addr = null;
 	private BufferedReader stdIn = null;
-    private BufferedReader socIn = null;
-    private PrintStream socOut = null;
-    
+
     
 	public Client(int groupPort, String addr) {
 		this.groupPort = groupPort;
@@ -46,7 +44,7 @@ public class Client {
 	public void run() {
 
         try {
-      	    // creation socket ==> connexion
+
         	
         this.multicastSocket = new MulticastSocket(this.groupPort);
         multicastSocket.joinGroup(this.groupAddr);
@@ -89,7 +87,7 @@ public class Client {
 	                DatagramPacket reception = new DatagramPacket(buf, buf.length); 
 	        		multicastSocket.receive(reception);
 	        		String msgreception = new String( buf, StandardCharsets.UTF_8 );
-	        		System.out.println(msgreception);
+
 	        	} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
