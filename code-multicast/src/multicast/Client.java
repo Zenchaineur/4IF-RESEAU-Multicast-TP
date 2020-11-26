@@ -87,7 +87,7 @@ public class Client {
 	                DatagramPacket reception = new DatagramPacket(buf, buf.length); 
 	        		multicastSocket.receive(reception);
 	        		String msgreception = new String( buf, StandardCharsets.UTF_8 );
-
+	        		System.out.println(msgreception);
 	        	} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
