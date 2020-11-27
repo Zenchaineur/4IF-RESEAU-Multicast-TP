@@ -16,7 +16,7 @@ public class MainClient  {
 	
 	/**
 	 * main method
-	 * @param String port
+	 * @param args String
 	 * 
 	 **/
 	public static void main(String args[]){ 
